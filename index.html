@@ -716,11 +716,11 @@
                 <ol>
                   <li>P0 arriva alla sua Receive.</li>
                   <li>Nella Mailbox c'è qualcosa, prende il messaggio ed entra nella sua sezione critica.</li>
-                  <li>Il Produttore non ha ancora prodotto nulla, quindi il Consumatore si blocca in attesa.</li>
-                  <li>Il Produttore esegue la Send.</li>
-                  <li>Il Consumatore riceve il Dato e invia la ricevuta al Produttore.</li>
-                  <li>Il produttore rimane nella Send fino a quando non riceve la ricevuta.</li>
-                  <li>Il produttore rimane nella Send fino a quando non riceve la ricevuta.</li>
+                  <li>Nel mentre P1 arriva alla sua Receive.</li>
+                  <li>Nella Mailbox non è presente nulla.</li>
+                  <li>La Receive è bloccante quindi P1 attende l'arrivo di un messaggio.</li>
+                  <li>P0 esce dalla sua sezione critica ed esegue una Send verso la Mailbox.</li>
+                  <li>P1 esce dalla Receive, perché riceve il messaggio inviato dall'altro processo, ed entra nella sua sezione critica.</li>
                 </ol>
                 <img src="img/mem-cond/messaggio-2.PNG" alt="Errore">
               </div>
